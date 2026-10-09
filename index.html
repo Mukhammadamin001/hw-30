@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Склад — WEPRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Боковое меню (бонус) -->
+      <aside class="sidebar">
+        <a class="brand" href="#">
+          <span class="brand__logo">W</span>
+          <span class="brand__text">
+            <span class="brand__name">WEPRO</span>
+            <span class="brand__place">Гастробар · Никольская</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Разделы админки">
+          <p class="nav__section">Меню</p>
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="#">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <circle cx="8" cy="8" r="6" />
+                  <path d="M8 5v6" />
+                </svg>
+                Блюда
+              </a>
+            </li>
+            <li>
+              <a class="nav__link" href="#">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1" />
+                  <rect x="9" y="2.5" width="4.5" height="4.5" rx="1" />
+                  <rect x="2.5" y="9" width="4.5" height="4.5" rx="1" />
+                  <rect x="9" y="9" width="4.5" height="4.5" rx="1" />
+                </svg>
+                Категории
+              </a>
+            </li>
+          </ul>
+
+          <p class="nav__section">Продажи</p>
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="#">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M2.5 4h11l-1.2 8.5h-8.6z" />
+                  <path d="M6 7v2.5M10 7v2.5" />
+                </svg>
+                Заказы
+              </a>
+            </li>
+            <li>
+              <a class="nav__link" href="#">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <circle cx="8" cy="5.5" r="2.75" />
+                  <path d="M3 13.5c.6-2.6 2.6-4 5-4s4.4 1.4 5 4" />
+                </svg>
+                Клиенты
+              </a>
+            </li>
+          </ul>
+
+          <p class="nav__section">Закупки</p>
+          <ul class="nav__list">
+            <li>
+              <a
+                class="nav__link nav__link--active"
+                href="#"
+                aria-current="page"
+              >
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M8 2 13.5 4.75v6.5L8 14l-5.5-2.75v-6.5z" />
+                  <path d="M2.5 4.75 8 7.5l5.5-2.75M8 7.5V14" />
+                </svg>
+                Склад
+                <span class="nav__badge" aria-label="7 позиций требуют дозаказа"
+                  >7</span
+                >
+              </a>
+            </li>
+            <li>
+              <a class="nav__link" href="#">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M1.5 4h8v7h-8zM9.5 6.5h3l2 2.5v2h-5" />
+                  <circle cx="4.5" cy="12" r="1.5" />
+                  <circle cx="11.5" cy="12" r="1.5" />
+                </svg>
+                Поставщики
+              </a>
+            </li>
+            <li>
+              <a class="nav__link" href="#">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M2 13.5h12M4.5 11V7M8 11V3.5M11.5 11V8.5" />
+                </svg>
+                Отчёты
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__footer">
+          <section class="reminder">
+            <h2 class="reminder__title">Инвентаризация</h2>
+            <p class="reminder__text">
+              Последняя — 27 июля.<br />Следующая через 4 дня.
+            </p>
+          </section>
+
+          <div class="user">
+            <span class="user__avatar" aria-hidden="true">ИК</span>
+            <span class="user__text">
+              <span class="user__name">Ирина Ковалева</span>
+              <span class="user__role">Закупки</span>
+            </span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <!-- Шапка страницы (бонус) -->
+        <header class="page-header">
+          <div>
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+              <a href="#">Закупки</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Склад</span>
+            </nav>
+            <h1 class="page-header__title">Склад</h1>
+            <p class="page-header__meta">
+              42 позиции · данные обновлены сегодня в 14:20
+            </p>
+          </div>
+
+          <div class="page-header__actions">
+            <button class="button" type="button">
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                <rect x="3" y="2" width="10" height="12" rx="1.5" />
+                <path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3" />
+              </svg>
+              Инвентаризация
+            </button>
+            <button class="button" type="button">Экспорт</button>
+            <button class="button button--primary" type="button">
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 3v10M3 8h10" />
+              </svg>
+              Создать заказ
+            </button>
+          </div>
+        </header>
+
+        <!-- Карточки с показателями (бонус) -->
+        <section class="stats" aria-label="Сводка по складу">
+          <article class="stat">
+            <h2 class="stat__label">Стоимость запасов</h2>
+            <p class="stat__value">486 200 ₽</p>
+            <p class="stat__note"><span class="text-ok">−4,1%</span> к июню</p>
+          </article>
+          <article class="stat">
+            <h2 class="stat__label">Требуют дозаказа</h2>
+            <p class="stat__value">7 <small>из 42</small></p>
+            <p class="stat__note">
+              <span class="dot dot--danger" aria-hidden="true"></span>
+              2 критично · 5 заканчиваются
+            </p>
+          </article>
+          <article class="stat">
+            <h2 class="stat__label">Закупка за июль</h2>
+            <p class="stat__value">1 148 700 ₽</p>
+            <p class="stat__note"><strong>28,4%</strong> от выручки</p>
+          </article>
+          <article class="stat">
+            <h2 class="stat__label">Списания за июль</h2>
+            <p class="stat__value">18 400 ₽</p>
+            <p class="stat__note">
+              <span class="text-danger">+2 100 ₽</span> к июню
+            </p>
+          </article>
+        </section>
+
+        <section class="panel" aria-labelledby="warehouse-caption">
+          <!-- Фильтры (бонус) -->
+          <div class="toolbar">
+            <div class="tabs" role="group" aria-label="Фильтр по статусу">
+              <button
+                class="tabs__item tabs__item--active"
+                type="button"
+                aria-pressed="true"
+              >
+                Все 42
+              </button>
+              <button class="tabs__item" type="button" aria-pressed="false">
+                Заканчиваются 5
+              </button>
+              <button class="tabs__item" type="button" aria-pressed="false">
+                Критично 2
+              </button>
+            </div>
+
+            <label class="search">
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="7" cy="7" r="4.5" />
+                <path d="m10.5 10.5 3 3" />
+              </svg>
+              <span class="visually-hidden">Поиск</span>
+              <input
+                type="search"
+                placeholder="Поиск по позиции или поставщику"
+              />
+            </label>
+
+            <select class="select" aria-label="Поставщик">
+              <option>Поставщик</option>
+              <option>Тесоро</option>
+              <option>Норд Фиш</option>
+              <option>Овощная база</option>
+              <option>Мясной дом</option>
+              <option>Гарантия Плюс</option>
+            </select>
+
+            <select class="select" aria-label="Категория">
+              <option>Категория</option>
+              <option>Ингредиенты и продукты</option>
+              <option>Полуфабрикаты</option>
+            </select>
+
+            <p class="toolbar__sort">
+              Сортировка: <strong>по запасу дней ↑</strong>
+            </p>
+          </div>
+
+          <!-- ===== Таблица склада ===== -->
+          <div class="table-scroll">
+            <table class="warehouse">
+              <caption id="warehouse-caption" class="visually-hidden">
+                Остатки на складе
+              </caption>
+
+              <colgroup>
+                <col />
+                <col class="col-stock" />
+                <col class="col-days" />
+                <col class="col-usage" />
+                <col class="col-reorder" />
+                <col class="col-price" />
+                <col class="col-total" />
+                <col class="col-status" />
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать все позиции"
+                      />
+                      Позиция
+                    </span>
+                  </th>
+                  <th scope="col">Остаток</th>
+                  <th scope="col" aria-sort="ascending">
+                    Хватит на
+                    <span class="sort-arrow" aria-hidden="true">↑</span>
+                  </th>
+                  <th scope="col">Расход / мес</th>
+                  <th scope="col">Дозаказать</th>
+                  <th scope="col">Цена</th>
+                  <th scope="col">На складе</th>
+                  <th scope="col">Статус</th>
+                </tr>
+              </thead>
+
+              <!-- Группа 1 -->
+              <tbody>
+                <tr class="group">
+                  <th colspan="8" scope="rowgroup">
+                    <span class="group__inner">
+                      <span class="group__title">
+                        Ингредиенты и продукты
+                        <span class="group__count">6 поз.</span>
+                      </span>
+                      <span class="group__total">на складе 109 061 ₽</span>
+                    </span>
+                  </th>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Страчателла"
+                      />
+                      <span class="item__icon" aria-hidden="true">🧀</span>
+                      <span class="item__text">
+                        <span class="item__name">Страчателла</span>
+                        <span class="item__meta">Тесоро · кг · срок 5 дн.</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    2,1 кг
+                    <span
+                      class="level level--danger"
+                      style="--level: 35%"
+                    ></span>
+                  </td>
+                  <td class="days days--danger">2,3 дн</td>
+                  <td>
+                    27,4 кг
+                    <span class="sub">35 346 ₽</span>
+                  </td>
+                  <td>
+                    <span class="stepper">
+                      <button type="button" aria-label="Уменьшить">−</button>
+                      <output>8 кг</output>
+                      <button type="button" aria-label="Увеличить">+</button>
+                    </span>
+                  </td>
+                  <td>1 290 ₽</td>
+                  <td class="total">2 709 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--danger">Критично</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Лосось с/м, филе"
+                      />
+                      <span class="item__icon" aria-hidden="true">🐟</span>
+                      <span class="item__text">
+                        <span class="item__name">Лосось с/м, филе</span>
+                        <span class="item__meta"
+                          >Норд Фиш · кг · охл. 0…+2</span
+                        >
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    8,4 кг
+                    <span
+                      class="level level--danger"
+                      style="--level: 47%"
+                    ></span>
+                  </td>
+                  <td class="days days--danger">2,6 дн</td>
+                  <td>
+                    96,5 кг
+                    <span class="sub">139 925 ₽</span>
+                  </td>
+                  <td>
+                    <span class="stepper">
+                      <button type="button" aria-label="Уменьшить">−</button>
+                      <output>24 кг</output>
+                      <button type="button" aria-label="Увеличить">+</button>
+                    </span>
+                  </td>
+                  <td>1 450 ₽</td>
+                  <td class="total">12 180 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--danger">Критично</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Томаты черри на ветке"
+                      />
+                      <span class="item__icon" aria-hidden="true">🍅</span>
+                      <span class="item__text">
+                        <span class="item__name">Томаты черри на ветке</span>
+                        <span class="item__meta">Овощная база · кг</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    5,8 кг
+                    <span class="level level--warn" style="--level: 64%"></span>
+                  </td>
+                  <td class="days days--danger">2,8 дн</td>
+                  <td>
+                    61,3 кг
+                    <span class="sub">25 746 ₽</span>
+                  </td>
+                  <td>
+                    <span class="stepper">
+                      <button type="button" aria-label="Уменьшить">−</button>
+                      <output>12 кг</output>
+                      <button type="button" aria-label="Увеличить">+</button>
+                    </span>
+                  </td>
+                  <td>420 ₽</td>
+                  <td class="total">2 436 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--warn">Заканчивается</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Рибай, зачищенный"
+                      />
+                      <span class="item__icon" aria-hidden="true">🥩</span>
+                      <span class="item__text">
+                        <span class="item__name">Рибай, зачищенный</span>
+                        <span class="item__meta">Мясной дом · кг · вакуум</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    21,6 кг
+                    <span class="level level--ok" style="--level: 100%"></span>
+                  </td>
+                  <td class="days">8,7 дн</td>
+                  <td>
+                    74,2 кг
+                    <span class="sub">161 756 ₽</span>
+                  </td>
+                  <td>
+                    <span class="empty" aria-label="Не требуется">—</span>
+                  </td>
+                  <td>2 180 ₽</td>
+                  <td class="total">47 088 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--ok">В норме</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Мука Манитоба W380"
+                      />
+                      <span class="item__icon" aria-hidden="true">🌾</span>
+                      <span class="item__text">
+                        <span class="item__name">Мука Манитоба W380</span>
+                        <span class="item__meta">Гарантия Плюс · кг</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    96 кг
+                    <span class="level level--ok" style="--level: 100%"></span>
+                  </td>
+                  <td class="days">16 дн</td>
+                  <td>
+                    184 кг
+                    <span class="sub">21 712 ₽</span>
+                  </td>
+                  <td>
+                    <span class="empty" aria-label="Не требуется">—</span>
+                  </td>
+                  <td>118 ₽</td>
+                  <td class="total">11 328 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--ok">В норме</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Масло оливковое EV"
+                      />
+                      <span class="item__icon" aria-hidden="true">🫒</span>
+                      <span class="item__text">
+                        <span class="item__name">Масло оливковое EV</span>
+                        <span class="item__meta"
+                          >Тесоро · л · 5 л канистра</span
+                        >
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    34 л
+                    <span class="level level--ok" style="--level: 100%"></span>
+                  </td>
+                  <td class="days">21 дн</td>
+                  <td>
+                    48 л
+                    <span class="sub">47 040 ₽</span>
+                  </td>
+                  <td>
+                    <span class="empty" aria-label="Не требуется">—</span>
+                  </td>
+                  <td>980 ₽</td>
+                  <td class="total">33 320 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--ok">В норме</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+
+              <!-- Группа 2 -->
+              <tbody>
+                <tr class="group">
+                  <th colspan="8" scope="rowgroup">
+                    <span class="group__inner">
+                      <span class="group__title">
+                        Полуфабрикаты собственного производства
+                        <span class="group__count">4 поз.</span>
+                      </span>
+                      <span class="group__total">на складе 11 092 ₽</span>
+                    </span>
+                  </th>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Тесто для пиццы, шар 260 г"
+                      />
+                      <span class="item__icon" aria-hidden="true">🍕</span>
+                      <span class="item__text">
+                        <span class="item__name"
+                          >Тесто для пиццы, шар 260 г</span
+                        >
+                        <span class="item__meta"
+                          >Своё производство · шт · 48 ч</span
+                        >
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    62 шт
+                    <span class="level level--warn" style="--level: 52%"></span>
+                  </td>
+                  <td class="days days--danger">1,0 дн</td>
+                  <td>
+                    1 840 шт
+                    <span class="sub">84 640 ₽</span>
+                  </td>
+                  <td>
+                    <span class="stepper">
+                      <button type="button" aria-label="Уменьшить">−</button>
+                      <output>180 шт</output>
+                      <button type="button" aria-label="Увеличить">+</button>
+                    </span>
+                  </td>
+                  <td>46 ₽</td>
+                  <td class="total">2 852 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--warn">Заканчивается</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Тальятелле свежая"
+                      />
+                      <span class="item__icon" aria-hidden="true">🍝</span>
+                      <span class="item__text">
+                        <span class="item__name">Тальятелле свежая</span>
+                        <span class="item__meta"
+                          >Своё производство · кг · 4 дн.</span
+                        >
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    3,4 кг
+                    <span
+                      class="level level--danger"
+                      style="--level: 43%"
+                    ></span>
+                  </td>
+                  <td class="days days--danger">2,4 дн</td>
+                  <td>
+                    42,6 кг
+                    <span class="sub">22 152 ₽</span>
+                  </td>
+                  <td>
+                    <span class="stepper">
+                      <button type="button" aria-label="Уменьшить">−</button>
+                      <output>10 кг</output>
+                      <button type="button" aria-label="Увеличить">+</button>
+                    </span>
+                  </td>
+                  <td>520 ₽</td>
+                  <td class="total">1 768 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--danger">Критично</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Бульон даси"
+                      />
+                      <span class="item__icon" aria-hidden="true">🍜</span>
+                      <span class="item__text">
+                        <span class="item__name">Бульон даси</span>
+                        <span class="item__meta"
+                          >Своё производство · л · 3 дн.</span
+                        >
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    11,5 л
+                    <span class="level level--ok" style="--level: 100%"></span>
+                  </td>
+                  <td class="days days--warn">3,6 дн</td>
+                  <td>
+                    96 л
+                    <span class="sub">32 640 ₽</span>
+                  </td>
+                  <td>
+                    <span class="empty" aria-label="Не требуется">—</span>
+                  </td>
+                  <td>340 ₽</td>
+                  <td class="total">3 910 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--ok">В норме</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">
+                    <span class="item">
+                      <input
+                        class="check"
+                        type="checkbox"
+                        aria-label="Выбрать: Соус понзу"
+                      />
+                      <span class="item__icon" aria-hidden="true">🥣</span>
+                      <span class="item__text">
+                        <span class="item__name">Соус понзу</span>
+                        <span class="item__meta"
+                          >Своё производство · л · 7 дн.</span
+                        >
+                      </span>
+                    </span>
+                  </th>
+                  <td>
+                    4,2 л
+                    <span class="level level--warn" style="--level: 84%"></span>
+                  </td>
+                  <td class="days days--warn">5,5 дн</td>
+                  <td>
+                    22,8 л
+                    <span class="sub">13 908 ₽</span>
+                  </td>
+                  <td>
+                    <span class="stepper">
+                      <button type="button" aria-label="Уменьшить">−</button>
+                      <output>6 л</output>
+                      <button type="button" aria-label="Увеличить">+</button>
+                    </span>
+                  </td>
+                  <td>610 ₽</td>
+                  <td class="total">2 562 ₽</td>
+                  <td>
+                    <span class="status">
+                      <span class="badge badge--warn">Заканчивается</span>
+                      <button class="more" type="button" aria-label="Действия">
+                        ···
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Пагинация (бонус) -->
+          <footer class="panel__footer">
+            <p>Показано 10 из 42 позиций</p>
+            <nav class="pagination" aria-label="Страницы">
+              <a
+                class="pagination__link pagination__link--disabled"
+                aria-disabled="true"
+                >Назад</a
+              >
+              <a
+                class="pagination__link pagination__link--active"
+                href="#"
+                aria-current="page"
+                >1</a
+              >
+              <a class="pagination__link" href="#">2</a>
+              <a class="pagination__link" href="#">3</a>
+              <a class="pagination__link" href="#">Вперёд</a>
+            </nav>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
